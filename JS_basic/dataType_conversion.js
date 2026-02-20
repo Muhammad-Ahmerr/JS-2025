@@ -4,8 +4,8 @@ let score= "22aab"
 
 let changeAmount= Number(score)   //it convert "22aab" in number that's the main issue we use typeScript also in case of null it converted into 0 that will be the error in temp.
 
-// console.log(typeof changeAmount);
-// console.log(changeAmount);
+console.log(typeof changeAmount);
+console.log(changeAmount);
 
 
 // "33" => 33
