@@ -37,3 +37,27 @@ let ahm= function(){
 
 //if you want to become a JS expert then you need to know the JS Objects and web events
 
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//How memory works
+// Stack (Premitive (memory copy)), heap(noPremitive (refrence))
+
+let grade= "Blue"
+
+let newGrade= grade
+newGrade="Pink"
+// console.log(newGrade);  //it give me copy and changes made in copy
+
+let myDetail={
+    namee: "Ahmer",
+    age: 27,
+    class: "pink"
+
+}
+
+let newDetails=myDetail
+newDetails.namee="wasif"
+// console.log(newDetails["namee"]);  //it changes the orignal refrence value
+// console.log(myDetail["namee"]);
+
+
