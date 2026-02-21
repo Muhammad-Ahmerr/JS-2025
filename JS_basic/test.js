@@ -8,3 +8,4 @@ myName="change name"
 //now a day we didn't use VAR just because of its block scope issue
 
 console.table([myName, countryRegion, pie])
+//In which I shows  output in table

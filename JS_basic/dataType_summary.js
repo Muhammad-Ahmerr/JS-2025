@@ -9,7 +9,7 @@
 const id=Symbol("123")
 const anotherID=Symbol("123")
 
-// console.log(id==anotherID);
+// console.log(id===anotherID);
 
 
 //#NonPremitive (Reference Type)
@@ -27,7 +27,9 @@ let myObj={
     city:"Multan"    
 }
 
-// console.log(myObj["name"]);
+// console.log(myObj["name"]);  //both are fine for calling the objects keys
+// console.log(myObj.name);
+
 
 
 let ahm= function(){
@@ -59,5 +61,17 @@ let newDetails=myDetail
 newDetails.namee="wasif"
 // console.log(newDetails["namee"]);  //it changes the orignal refrence value
 // console.log(myDetail["namee"]);
+
+
+
+// let obj1={
+//     location: "Johar Town",
+//     country:"Pakistan"
+// }
+
+// let obj2=obj1
+// obj2.location="Multan"
+
+// console.log(obj1.location);
 
 
