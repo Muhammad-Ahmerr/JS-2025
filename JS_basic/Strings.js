@@ -60,8 +60,15 @@ let st1="Ahmer"
 // }
 
 
-let myNewString="Ahmer@gmail.com"
+let myNewString="  Ahmer@gmail.com  "
 
 // console.log(myNewString.replace('@', " "));
 // let newstr= myNewString.split('@') 
-// console.log(newstr.join());
+// let withReplace=myNewString.replace("@","")
+// console.log((`${withReplace}`+" ").repeat(2));
+
+
+
+
+
+

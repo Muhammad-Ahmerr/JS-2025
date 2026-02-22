@@ -9,7 +9,7 @@
 const id=Symbol("123")
 const anotherID=Symbol("123")
 
-// console.log(id===anotherID);
+// console.log(id===anotherID);//give false because every symbol is a unique
 
 
 //#NonPremitive (Reference Type)
@@ -61,6 +61,7 @@ let newDetails=myDetail
 newDetails.namee="wasif"
 // console.log(newDetails["namee"]);  //it changes the orignal refrence value
 // console.log(myDetail["namee"]);
+
 
 
 
