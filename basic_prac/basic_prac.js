@@ -1,11 +1,14 @@
 // String Operation
 
+
 const myStr="this is the main guide line of my line"
 
 // console.log(myStr.concat("...."));
 
-// let ar=new Array(2,3,4,4)
-// console.log(ar.splice(0,3,"delted"));
+let ar=new Array(2,3,4,4)
+// console.log(ar.splice(0,2,"delted"));  //startIndex, deleteCount(how much should delete), replacement
+// console.log(ar);
+
 
 // console.log(ar);
 // console.log(ar.join("")); //this also remove the , by using ""
@@ -16,7 +19,6 @@ const myStr="this is the main guide line of my line"
 // console.log(ar2);
 
 // ar2[3]=0
-// ar2.reduce   
 // console.log(ar2);
 
 const nameOfArray=['Wasif','zaid','haris','ahmer','zubair']
@@ -50,7 +52,7 @@ const newSt="the  regular expression is the  of the jungle"
 // console.log(found);
 
 // const para="the following is the key success"
-// const reg="key"               //match gives the position index of the element 
+// const reg="key"               //match return array with the position index and all the details of the element 
 // console.log(para.match(reg));
 
 // const para="the key following is the key success"
@@ -81,13 +83,20 @@ const newSt="the  regular expression is the  of the jungle"
 // padStart
 
 const number1="thermostate";
+// const staricNum=number1.slice(0,4)+"*".repeat(number1.length - 8) +number1.slice(-4)
+// console.log(staricNum);
 
 // console.log(number1.padStart(13,'s'));  //need to specify the total lenght of string first (lenght is always start from 1)
 
 // console.log(number1.padEnd(13,"s"));
-// console.log(number1.padStart(13,"s"));
+
 
 // const fullNumber = "2034399002125581";
+// const last4Digits=fullNumber.slice(-4)
+// console.log(last4Digits.padStart( fullNumber.length,"*"));
+
+
+
 // const last4Digits = fullNumber.slice(-4);
 // const maxpad=last4Digits.padStart(fullNumber.length,'*')  //for card **********5581 logic 
 // console.log((maxpad));
@@ -169,8 +178,11 @@ const ar2=['ahmer','wasif','haris','rauf','altaf']
 // console.log([...ar1,...ar2]);
 
 // console.log(ar1.at(0)); //index value
-// const ar3=ar1.copyWithin(0,4,5)  //this is used to copy the elements of array to override the target element
+// const ar3=ar1.copyWithin(0,4,6)  //this is used to copy the elements of array to override the target element alsolast range is not included 
 // console.log(ar3);
+
+
+
 
 
 
@@ -189,20 +201,23 @@ const ar2=['ahmer','wasif','haris','rauf','altaf']
 
 
 
-// let courses=[
-//     {
-//         name: "Ahmer",
-//         language: 'javaScript',
-//     },
-//     {
-//         name: "wasif",
-//         language: 'javaScript',
-//     },
-//     {
-//         name: "haris",
-//         language: 'Python',
-//     }
-// ]
+let courses=[
+    {
+        name: "Ahmer",
+        language: 'javaScript',
+    },
+    {
+        name: "wasif",
+        language: 'javaScript',
+    },
+    {
+        name: "haris",
+        language: 'Python',
+    }
+]
+
+
+ 
 
 // let student=courses.every(course=> course.language=="javaScript")  //Also every needs callBack() and return Boolean
 // console.log(student);
@@ -210,29 +225,31 @@ const ar2=['ahmer','wasif','haris','rauf','altaf']
 
 
 // #Fill(Array)
+// console.log(ar1);
 
 // console.log(ar1.fill(1,2,4)); //it fill the value in the array and return the modified arry
-// console.log(ar1.filter(5,1,4));
 
-// function creatFill(length,value){
+// function creatFill(length,value){            //finction that recieve argument and return an array in which get lenght fill value 
 //     return new Array(length).fill(value)
 // }
 
 // let a1=creatFill(5, 8)    //[ 8, 8, 8, 8, 8 ]
 // console.log(a1);
 
-const arFilter=[4,2,4,1,7,3]
+
+
+// const arFilter=[4,2,4,1,7,3]
 
 // let arFilter2=arFilter.filter((value)=>{   //it doesn't change the orignal array but return the array
 //     return value>5
 // })
 // console.log(arFilter2);
 
-// #Map(Array)
+// #Map(Array)   
 
 // let arMap=[23,32,4,354,4]
 // let mapcheck=arMap.map((value,index,array)=>{
-//     console.log(value,index, array);
+//     // console.log(value,index, array);
     
 //     return value
 // })
@@ -240,11 +257,11 @@ const arFilter=[4,2,4,1,7,3]
 
 // #Reduce(Array)
 
-// const arReduce=[1,3,2,1,4,1] //24    it comparison 1st 2 then 2nd and 3rd then 3rd and 4th and so on..........
+// const arReduce=[1,3,2,1,4,1] //12   it comparison 1st 2 then 2nd and 3rd then 3rd and 4th and so on..........
 
-// let reduceCheck=arReduce.reduce((value1,value2)=>{
-//     return value1*value2
-// })
+// let reduceCheck=arReduce.reduce((accumulator,value2)=>{
+//     return accumulator+value2
+// },0)
 
 // console.log(reduceCheck);
 
@@ -259,6 +276,7 @@ const arFilter=[4,2,4,1,7,3]
 // })
 
 // console.log(sum);   //sum all the value of array
+
 
 
 
@@ -304,16 +322,93 @@ const products= [
 // console.log(`Name: ${value.name} and Price: ${value.price} `);  //this return String 
 // });
 
-// let getMap=products.map((values)=>({name:values.name, price: values.price}))
+// let getMap=products.map((values)=>({name:values.name, price: values.price}))  //this returns the Object
 // console.log(getMap);
 
 
-let totalPrice=products.reduce((accumulator,currentValue)=>{
-    if(currentValue.inStock==false)
-        return accumulator+ currentValue.price
-    else
-        return accumulator
-},0
-)
+// let totalPrice=products.reduce((accumulator,currentValue)=>{
+//     if(currentValue.inStock==false)
+//         return accumulator+ currentValue.price
+//     else
+//         return accumulator
+// },0)
 
-console.log(totalPrice);
+// console.log(totalPrice);
+
+
+// products.map((value)=>{
+
+    
+// })
+// console.log(mapValue);
+
+
+
+
+// #Find(Array)
+
+// const arChecking=[22,33,44,3,43,11,1]      //find return the first element that match in array while the filter will filter all the array element 
+// const findFirstValue=arChecking.find((value)=>{
+//     return value % 3==0
+// })
+// console.log(findFirstValue);
+
+
+
+
+
+// const inventory = [                  //find cherries and it return first cherry object also in find() logic I pass function
+//   { name: "apples", quantity: 2 },
+//   { name: "bananas", quantity: 0 },
+//   { name: "cherries", quantity: 5 },
+// ];
+
+// function isCherry(fruite){
+//     return fruite.name=="cherries"
+// }
+
+// let findInventory=inventory.find(isCherry)
+// console.log(findInventory);
+
+
+// #findIndexOf(Array)
+
+// let a=arChecking.findIndex((value)=> value>11)  //it find the first index of array after condition
+// console.log(a);
+
+
+//#findLast(Array)
+// const arChecking=[1,22,33,44,3,43,11,1]   
+// console.log( arChecking.findLast((value)=> value<33));   //it return the last find() and takes the anonymous function()
+
+
+//#findLastIndex(Array) is similler the findLast() but gives the last element index value according to condition 
+// console.log(arChecking.findLastIndex((value)=> value<2))
+
+
+// #ForEach(Array)
+
+// arChecking.forEach((value)=> console.log(value))  //is use to Iterate the array of anything to get thier values
+
+// arChecking.flatMap((value)=>value)// needs research
+
+
+//ReduceRight(Array) is similer to Reduce() but start from the Right
+
+const arChecking=[1,2,3,4,3,4,1,1]   
+// let checkReduce=arChecking.reduceRight((accumulator, value)=>{
+//     return accumulator+value
+// },0)
+
+// console.log(checkReduce);
+
+
+// #Some(Array)
+// console.log(arChecking.some((value)=> value<5))  //return boolean if any of element found after certen condition
+
+// let checkValue=arChecking.values()   //it return iteratable for this need fOR any loop
+// for (const element of checkValue) {
+//     console.log(element);   
+// }
+
+// console.log(arChecking.with(2,0));  //return new copy of array with replace value

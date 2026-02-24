@@ -16,8 +16,10 @@ let newar1=ar1.join() //covert it into string
 
 // console.log(st1.slice(-5,-2)); //it doesn't include last index & for positive it start from 0 and negative -1
 // console.log(ar1);
-// console.log(ar1.splice(-5-2)); // it manupulate the orignal array means splice part cut from orgial array also it include the range in slice not
+const months=['jan','feb','march','april']
+console.log(months.splice(1,2,'deleted')); // (syntex: startnumber, deletecount, replaceItem) it manupulate the orignal array means splice part cut from orgial array also it include the range in slice not
 // console.log(ar1);
+console.log(months);
 
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -46,5 +48,5 @@ const score1=100
 const score2=200
 const score3=300
 
-console.log(Array.of(score1,score2,score3));
+// console.log(Array.of(score1,score2,score3));
 
